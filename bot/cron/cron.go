@@ -21,7 +21,7 @@ func UpdatePlayerDataCron(s *discordgo.Session) {
 
 	for _, user := range users {
 		// NOTE / TODO: Some slowdown may happen here!
-		user.MutualServers = utils.GetMutualServers(s, user.DiscordId) // making sure to update mutual servers for each user!
+		user.MutualServers = utils.GetMutualServers(s, user.DiscordId) // making sure to update mutual servers for each user in case they join / leave ones with bot in there
 		steamIdToUser[user.SteamId] = user
 	}
 
